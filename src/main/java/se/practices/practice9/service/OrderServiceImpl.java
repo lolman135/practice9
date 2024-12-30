@@ -23,12 +23,19 @@ public class OrderServiceImpl implements OrderService{
     }
 
     @Override
-    public void saveOrder(Order order) {
+    public void saveOrder(Order order) throws IllegalArgumentException {
+        validatePhoneNumber(order.getCustomerPhone());
         orderRepository.save(order);
     }
 
     @Override
     public void deleteOrder(int id) {
         orderRepository.deleteById(id);
+    }
+
+    private void validatePhoneNumber(String phoneNumber){
+        if (!phoneNumber.matches("\\+380[0-9]{9}")){
+            throw new IllegalArgumentException("Invalid phone number");
+        }
     }
 }
