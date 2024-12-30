@@ -1,17 +1,18 @@
 package se.practices.practice9.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import se.practices.practice9.model.MenuItem;
 import se.practices.practice9.repository.MenuRepository;
 
 import java.util.List;
 
+@Service
 public class MenuServiceImpl implements MenuService{
 
-    private final MenuRepository menuRepository;
+    @Autowired
+    private MenuRepository menuRepository;
 
-    public MenuServiceImpl(MenuRepository menuRepository) {
-        this.menuRepository = menuRepository;
-    }
 
     @Override
     public List<MenuItem> getAllMenuItems() {

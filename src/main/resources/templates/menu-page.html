@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="/css/catalina_style.css">
+</head>
+<body>
+<h1 class="menu_head_title">Menu</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="menuItem : ${menuItems}">
+        <td><img th:src="${menuItem.imageUrl}" alt="Image of [[${menuItem.name}]]"></td>
+        <td th:text="${menuItem.name}"></td>
+        <td th:text="${menuItem.description}"></td>
+        <td th:text="${menuItem.price} + ' ₴'"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

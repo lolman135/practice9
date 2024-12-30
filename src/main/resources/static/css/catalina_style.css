@@ -1,0 +1,23 @@
+.menu_head_title{
+    text-align: center;
+}
+
+body{
+    font-family: "American Typewriter",serif;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+img {
+    max-width: 100px;
+    height: auto;
+}

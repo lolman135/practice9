@@ -1,16 +1,17 @@
 package se.practices.practice9.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import se.practices.practice9.model.Order;
 import se.practices.practice9.repository.OrderRepository;
 
 import java.util.List;
 
+@Service
 public class OrderServiceImpl implements OrderService{
-    private final OrderRepository orderRepository;
 
-    public OrderServiceImpl(OrderRepository orderRepository) {
-        this.orderRepository = orderRepository;
-    }
+    @Autowired
+    private OrderRepository orderRepository;
 
     @Override
     public List<Order> getAllOrders() {
