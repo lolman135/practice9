@@ -14,7 +14,6 @@ import se.practices.practice9.service.OrderService;
 import se.practices.practice9.utlis.PriceCalculator;
 
 import java.time.LocalTime;
-import java.util.List;
 
 @Controller
 @RequestMapping("/catalina_restaurant")

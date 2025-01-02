@@ -1,10 +1,19 @@
 package se.practices.practice9.model;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
 import java.time.LocalTime;
 
 @Entity
 @Table(name = "orders")
+@NoArgsConstructor
+@Getter
+@Setter
+@ToString
 public class Order {
 
     @Id
@@ -37,8 +46,6 @@ public class Order {
     @Column(name = "created_at")
     private LocalTime createdAt;
 
-    public Order() {
-    }
 
     public Order(String customerName, String customerPhone, String customerAddress,
                  OrderStatus orderStatus, String menuItems, double totalPrice,
@@ -51,92 +58,5 @@ public class Order {
         this.totalPrice = totalPrice;
         this.createdAt = createdAt;
         this.quantities = quantities;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getCustomerName() {
-        return customerName;
-    }
-
-    public void setCustomerName(String customerName) {
-        this.customerName = customerName;
-    }
-
-    public String getCustomerPhone() {
-        return customerPhone;
-    }
-
-    public void setCustomerPhone(String customerPhone) {
-        this.customerPhone = customerPhone;
-    }
-
-    public String getCustomerAddress() {
-        return customerAddress;
-    }
-
-    public void setCustomerAddress(String customerAddress) {
-        this.customerAddress = customerAddress;
-    }
-
-    public OrderStatus getOrderStatus() {
-        return orderStatus;
-    }
-
-    public void setOrderStatus(OrderStatus orderStatus) {
-        this.orderStatus = orderStatus;
-    }
-
-    public String getMenuItems() {
-        return menuItems;
-    }
-
-    public void setMenuItems(String menuItems) {
-        this.menuItems = menuItems;
-    }
-
-    public String getQuantities() {
-        return quantities;
-    }
-
-    public void setQuantities(String quantities) {
-        this.quantities = quantities;
-    }
-
-    public double getTotalPrice() {
-        return totalPrice;
-    }
-
-    public void setTotalPrice(double totalPrice) {
-        this.totalPrice = totalPrice;
-    }
-
-    public LocalTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(LocalTime createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    @Override
-    public String toString() {
-        return "Order{" +
-                "id=" + id +
-                ", customerName='" + customerName + '\'' +
-                ", customerPhone='" + customerPhone + '\'' +
-                ", customerAddress='" + customerAddress + '\'' +
-                ", orderStatus=" + orderStatus +
-                ", menuItems='" + menuItems + '\'' +
-                ", quantities='" + quantities + '\'' +
-                ", totalPrice=" + totalPrice +
-                ", createdAt=" + createdAt +
-                '}';
     }
 }
