@@ -7,6 +7,7 @@ import java.util.List;
 public interface MenuService {
     List<MenuItem> getAllMenuItems();
     MenuItem getMenuItemById(int id);
+    MenuItem getMenuItemByName(String name);
     void saveMenuItem(MenuItem menuItem);
     void deleteMenuItem(int id);
 }

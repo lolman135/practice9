@@ -3,7 +3,9 @@
 }
 
 body{
+    text-align: center;
     font-family: "American Typewriter",serif;
+    font-size: large;
 }
 
 table {
@@ -20,4 +22,32 @@ th, td {
 img {
     max-width: 100px;
     height: auto;
+}
+
+.create_order{
+    background-color: gainsboro;
+    border-radius: 10px;
+    text-align: center;
+    padding-bottom: 19%;
+    padding-top: 10%;
+}
+
+.submit_button{
+    background-color: limegreen;
+    color: white;
+    border-radius: 5px;
+    border-width: 0;
+    font-size: 15pt;
+    padding: 5px;
+    margin-right: 5px;
+}
+
+.cancel_button{
+    background-color: tomato;
+    color: white;
+    border-radius: 5px;
+    border-width: 0;
+    font-size: 15pt;
+    padding: 5px;
+    margin-left: 5px;
 }

@@ -7,24 +7,38 @@
     <link rel="stylesheet" href="/css/catalina_style.css">
 </head>
 <body>
-<h1 class="menu_head_title">Menu</h1>
-<table>
-    <thead>
-    <tr>
-        <th>Image</th>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Price</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="menuItem : ${menuItems}">
-        <td><img th:src="${menuItem.imageUrl}" alt="Image of [[${menuItem.name}]]"></td>
-        <td th:text="${menuItem.name}"></td>
-        <td th:text="${menuItem.description}"></td>
-        <td th:text="${menuItem.price} + ' ₴'"></td>
-    </tr>
-    </tbody>
-</table>
+    <header>
+        <h1 class="menu_head_title">Menu</h1>
+    </header>
+<main>
+    <table>
+        <thead>
+        <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="menuItem : ${menuItems}">
+            <td><img th:src="${menuItem.imageUrl}" alt="Image of [[${menuItem.name}]]"></td>
+            <td th:text="${menuItem.name}"></td>
+            <td th:text="${menuItem.description}"></td>
+            <td th:text="${menuItem.price} + ' ₴'"></td>
+        </tr>
+        </tbody>
+    </table>
+    <br>
+    <center>
+        <button onclick="window.location.href='orders/new'">
+            make an order
+        </button>
+    </center>
+
+</main>
+<footer>
+
+</footer>
 </body>
 </html>

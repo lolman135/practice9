@@ -25,6 +25,11 @@ public class MenuServiceImpl implements MenuService{
     }
 
     @Override
+    public MenuItem getMenuItemByName(String name) {
+        return menuRepository.getMenuItemByName(name);
+    }
+
+    @Override
     public void saveMenuItem(MenuItem menuItem) {
         menuRepository.save(menuItem);
     }
