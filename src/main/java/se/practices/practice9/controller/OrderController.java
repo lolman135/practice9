@@ -1,12 +1,10 @@
 package se.practices.practice9.controller;
 
+import org.aspectj.weaver.ast.Or;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import se.practices.practice9.model.Order;
 import se.practices.practice9.model.OrderStatus;
 import se.practices.practice9.service.MenuService;
@@ -14,6 +12,7 @@ import se.practices.practice9.service.OrderService;
 import se.practices.practice9.utlis.PriceCalculator;
 
 import java.time.LocalTime;
+import java.util.List;
 
 @Controller
 @RequestMapping("/catalina_restaurant")
@@ -69,7 +68,7 @@ public class OrderController {
     public String updateOrderStatus(
             @RequestParam int orderId,
             @RequestParam OrderStatus orderStatus
-    ) {
+    ){
         Order order = orderService.getOrderById(orderId);
         if (order != null) {
             order.setOrderStatus(orderStatus);
@@ -78,4 +77,14 @@ public class OrderController {
         return "redirect:/catalina_restaurant/orders/admins";
     }
 
+    @PostMapping("/orders/admins/delete")
+    public String deleteCanceledOrders(){
+        List<Order> orders = orderService.getAllOrders();
+        orders.forEach(order -> {
+            if (order.getOrderStatus() == OrderStatus.CANCELED || order.getOrderStatus() == OrderStatus.DELIVERED){
+                orderService.deleteOrder(order.getId());
+            }
+        });
+        return "redirect:/catalina_restaurant/orders/admins";
+    }
 }
