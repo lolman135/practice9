@@ -5,5 +5,4 @@ import se.practices.practice9.model.MenuItem;
 
 public interface MenuRepository extends JpaRepository<MenuItem, Integer> {
     MenuItem getMenuItemByName(String name);
-
 }

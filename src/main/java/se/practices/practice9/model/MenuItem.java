@@ -31,12 +31,10 @@ public class MenuItem {
     @Column(name = "image_url")
     private String imageUrl;
 
-
     public MenuItem(String name, String description, String imageUrl, double price) {
         this.name = name;
         this.description = description;
         this.imageUrl = imageUrl;
         this.price = price;
     }
-
 }

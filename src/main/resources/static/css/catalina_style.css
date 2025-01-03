@@ -1,11 +1,12 @@
 .menu_head_title{
-    text-align: center;
+    color: white;
 }
 
-body{
+html, body{
     text-align: center;
     font-family: "American Typewriter",serif;
     font-size: large;
+    height: 100%;
 }
 
 table {
@@ -42,6 +43,11 @@ img {
     margin-right: 5px;
 }
 
+.submit_button:active{
+    vertical-align: middle;
+    background-color: darkgreen;
+}
+
 .cancel_button{
     background-color: tomato;
     color: white;
@@ -51,3 +57,67 @@ img {
     padding: 5px;
     margin-left: 5px;
 }
+
+.cancel_button:active{
+    background-color: brown;
+}
+
+.main_label{
+    color: white;
+    font-size: 50pt;
+}
+
+.menu_img {
+    height: 300px !important;
+    min-width: 300px !important;
+    object-fit: cover;
+}
+
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons{
+    border-width: 0;
+    border-radius: 7px;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 15pt;
+    background-color: gainsboro;
+    padding: 5px;
+}
+
+.buttons:active{
+    vertical-align: middle;
+    background-color: dimgrey;
+}
+
+input {
+    border-radius: 4px;
+    border-width: 1px;
+}
+
+main {
+    flex: 1 1 auto;
+}
+
+header {
+    background-color: brown;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+
+footer {
+    border-radius: 10px;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 10pt;
+    color: #666666;
+    background-color: gainsboro;
+    text-align: center;
+    padding: 10px 0;
+    margin-bottom: 5px;
+}
+
+

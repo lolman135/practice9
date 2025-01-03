@@ -46,7 +46,6 @@ public class Order {
     @Column(name = "created_at")
     private LocalTime createdAt;
 
-
     public Order(String customerName, String customerPhone, String customerAddress,
                  OrderStatus orderStatus, String menuItems, double totalPrice,
                  LocalTime createdAt, String quantities) {

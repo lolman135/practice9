@@ -1,6 +1,7 @@
 package se.practices.practice9.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import se.practices.practice9.model.MenuItem;
 import se.practices.practice9.repository.MenuRepository;
@@ -16,7 +17,7 @@ public class MenuServiceImpl implements MenuService{
 
     @Override
     public List<MenuItem> getAllMenuItems() {
-        return menuRepository.findAll();
+        return menuRepository.findAll(Sort.by(Sort.Direction.ASC, "id"));
     }
 
     @Override

@@ -60,4 +60,23 @@ public class OrderController {
         return "order-success";
     }
 
+    @GetMapping("/orders/admins")
+    public String showAllOrders(Model model) {
+        model.addAttribute("orders", orderService.getAllOrders());
+        return "admins-info";
+    }
+
+    @PostMapping("/orders/admins/update-status")
+    public String updateOrderStatus(
+            @RequestParam int orderId,
+            @RequestParam OrderStatus orderStatus
+    ) {
+        Order order = orderService.getOrderById(orderId);
+        if (order != null) {
+            order.setOrderStatus(orderStatus);
+            orderService.saveOrder(order);
+        }
+        return "redirect:/catalina_restaurant/orders/admins";
+    }
+
 }

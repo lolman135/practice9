@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Orders</title>
+  <link rel="stylesheet" href="/css/catalina_style.css">
+</head>
+<body>
+<div class="wrapper">
+  <header>
+    <h1 class="main_label">All Orders</h1>
+  </header>
+  <main>
+    <table>
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Customer Name</th>
+        <th>Phone</th>
+        <th>Address</th>
+        <th>Menu Items</th>
+        <th>Quantities</th>
+        <th>Total Price</th>
+        <th>Status</th>
+        <th>Created At</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="order : ${orders}">
+        <td th:text="${order.id}"></td>
+        <td th:text="${order.customerName}"></td>
+        <td th:text="${order.customerPhone}"></td>
+        <td th:text="${order.customerAddress}"></td>
+        <td th:text="${order.menuItems}"></td>
+        <td th:text="${order.quantities}"></td>
+        <td th:text="${order.totalPrice} + ' ₴'"></td>
+        <td th:text="${order.orderStatus}"></td>
+        <td th:text="${order.createdAt}"></td>
+      </tr>
+      </tbody>
+    </table>
+
+    <h2>Update Order Status</h2>
+    <form action="/catalina_restaurant/orders/admins/update-status" method="post">
+      <label for="orderId">Order ID:</label>
+      <input type="number" id="orderId" name="orderId" required>
+      <br><br>
+      <label for="orderStatus">New Status:</label>
+      <select id="orderStatus" name="orderStatus">
+        <option th:each="status : ${T(se.practices.practice9.model.OrderStatus).values()}"
+                th:value="${status}"
+                th:text="${status}"></option>
+      </select>
+      <br><br>
+      <button type="submit" class="submit_button">Update Status</button>
+    </form>
+  </main>
+  <footer>
+    practice 9 test web page
+  </footer>
+</div>
+</body>
+</html>
