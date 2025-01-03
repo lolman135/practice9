@@ -6,6 +6,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+/**
+ * Represents an item in the restaurant menu.
+ */
 @Entity
 @Table(name = "menu")
 @NoArgsConstructor
@@ -31,6 +34,14 @@ public class MenuItem {
     @Column(name = "image_url")
     private String imageUrl;
 
+    /**
+     * Constructs a new MenuItem with the specified details.
+     *
+     * @param name        the name of the menu item
+     * @param description the description of the menu item
+     * @param imageUrl    the URL of the menu item's image
+     * @param price       the price of the menu item
+     */
     public MenuItem(String name, String description, String imageUrl, double price) {
         this.name = name;
         this.description = description;
