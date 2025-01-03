@@ -25,7 +25,6 @@ public class OrderController {
     @Autowired
     private  MenuService menuService;
 
-
     @GetMapping("/orders/new")
     public String showOrderForm(Model model) {
         model.addAttribute("menuItems", menuService.getAllMenuItems());
