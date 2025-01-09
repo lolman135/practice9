@@ -49,6 +49,14 @@ public class Order {
     @Column(name = "created_at")
     private LocalTime createdAt;
 
+    @PrePersist
+    @PreUpdate
+    public void truncatedCreatedAt(){
+        if (createdAt != null){
+            createdAt = createdAt.withNano(0);
+        }
+    }
+
     /**
      * Constructs a new Order with the specified details.
      *
@@ -70,7 +78,7 @@ public class Order {
         this.orderStatus = orderStatus;
         this.menuItems = menuItems;
         this.totalPrice = totalPrice;
-        this.createdAt = createdAt;
+        this.createdAt = createdAt.withNano(0);;
         this.quantities = quantities;
     }
 }

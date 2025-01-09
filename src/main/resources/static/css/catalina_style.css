@@ -88,6 +88,7 @@ img {
     border-radius: 7px;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: 15pt;
+    color:black;
     background-color: gainsboro;
     padding: 5px;
 }
